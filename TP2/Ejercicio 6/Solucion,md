@@ -1,0 +1,13 @@
+# Ejercicio 4
+
+- Índices Crea un índice compuesto sobre los campos apellido y nombre en una colección de clientes.
+
+## Codigo utilizado:
+
+- db.Clientes.createIndex({ "Apellido": 1, "Nombre": 1 })
+  
+  Este comando crea un índice compuesto en la colección Clientes que utiliza los campos Apellido y Nombre. El índice se crea en orden ascendente para ambos campos.
+
+- db.Clientes.getIndexes()
+  
+  Este comando devuelve una lista de todos los índices en la colección Clientes.
