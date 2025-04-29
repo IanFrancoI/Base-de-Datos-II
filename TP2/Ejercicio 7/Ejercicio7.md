@@ -1,0 +1,36 @@
+# Ejercicio 7
+
+## Creacion de colecciones 
+- db.createCollection(cursos)
+- db.createCollection(alumnos)
+
+## Inserts utilizados
+- db.cursos.insertMany([
+  { _id: ObjectId("661000000000000000000001"), nombre: "Programación Básica" },
+  { _id: ObjectId("661000000000000000000002"), nombre: "Desarrollo Web" },
+  { _id: ObjectId("661000000000000000000003"), nombre: "Bases de Datos" }
+])
+
+- db.alumnos.insertMany([
+  {
+    nombre: "Juan",
+    cursos: [
+      ObjectId("661000000000000000000001"),
+      ObjectId("661000000000000000000002")
+    ]
+  },
+  {
+    nombre: "María",
+    cursos: [
+      ObjectId("661000000000000000000003")
+    ]
+  },
+  {
+    nombre: "Pedro",
+    cursos: []
+  }
+])
+
+## solucion 
+
+- Se referencian los cursos de los alumnos con el operador $lookup.

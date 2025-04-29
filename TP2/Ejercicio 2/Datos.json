@@ -1,0 +1,35 @@
+db.Empleados1.insertMany([
+    {
+      "nombre": "Lucía Fernández",
+      "edad": 32,
+      "puesto": "Desarrolladora Backend",
+      "email": "lucia.fernandez@example.com"
+    },
+    {
+      "nombre": "Martín Rivas",
+      "edad": 28,
+      "puesto": "Analista de Datos",
+      "email": "martin.rivas@example.com"
+    },
+    {
+      "nombre": "Susana Torres",
+      "edad": 44,
+      "puesto": "Jefa de Recursos Humanos",
+      "email": "susana.torres@example.com"
+    },
+    {
+      "nombre": "Pedro Giménez",
+      "edad": 51,
+      "puesto": "Administrador de Sistemas",
+      "email": "pedro.gimenez@example.com"
+    }
+  ])
+
+  db.Empleados1.find({ edad: { $gte: 25, $lte: 40 } })
+
+  db.Empleados1.find({
+    $and: [
+      { edad: { $gte: 25 } },
+      { edad: { $lte: 40 } }
+    ]
+  })
