@@ -1,0 +1,20 @@
+use('Empresa');
+
+db.createCollection('Clientes');
+
+db.Clientes.insertMany([
+    { "Nombre": "Juan", "Apellido": "Pérez" },
+    { "Nombre": "María", "Apellido": "González" },
+    { "Nombre": "Carlos", "Apellido": "Rodríguez" },
+    { "Nombre": "Ana", "Apellido": "Martínez" },
+    { "Nombre": "Luis", "Apellido": "Sánchez" },
+    { "Nombre": "Laura", "Apellido": "Fernández" },
+    { "Nombre": "Pedro", "Apellido": "López" },
+    { "Nombre": "Sofía", "Apellido": "Díaz" },
+    { "Nombre": "Miguel", "Apellido": "Torres" },
+    { "Nombre": "Elena", "Apellido": "Ramírez" }
+]);
+
+db.Clientes.createIndex({ Nombre: 1, Apellido: 1 }, { unique: true });
+
+db.Clientes.getIndexes();
