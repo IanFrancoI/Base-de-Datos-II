@@ -1,0 +1,46 @@
+use('Empresa');
+
+db.createCollection('Ventas');
+
+db.Ventas.insertMany([
+    {
+      producto: "Laptop",
+      cantidad: 2,
+      precio_unitario: 1500
+    },
+    {
+      producto: "Teclado",
+      cantidad: 5,
+      precio_unitario: 50
+    },
+    {
+      producto: "Mouse",
+      cantidad: 10,
+      precio_unitario: 20
+    },
+    {
+      producto: "Monitor",
+      cantidad: 3,
+      precio_unitario: 300
+    },
+    {
+      producto: "Auriculares",
+      cantidad: 4,
+      precio_unitario: 80
+    }
+]);
+
+db.Ventas.aggregate([
+    {
+    $project: {
+        producto: 1,
+        total_venta: { $multiply: ["$cantidad", "$precio_unitario"] }
+    }
+    },
+    {
+    $group: {
+        _id: "$producto",
+        total_por_producto: { $sum: "$total_venta" }
+    }
+    }
+]);

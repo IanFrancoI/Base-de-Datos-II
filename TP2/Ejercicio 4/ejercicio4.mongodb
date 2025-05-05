@@ -1,0 +1,3 @@
+use('Empresa');
+
+db.Empleados1.updateOne({nombre: "Martín Rivas"}, {$set: {direccion: {calle: "Calle Falsa 456", ciudad: "Córdoba", codigo_postal: "5000"}}});

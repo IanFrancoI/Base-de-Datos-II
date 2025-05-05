@@ -1,0 +1,42 @@
+use('Empresa');
+
+db.createCollection('Empleados');
+
+db.insertMany([
+    {
+        "_id": {
+          "$oid": "67feecad9bd83d2f8f3f80ff"
+        },
+        "nombre": "Ivan",
+        "edad": 20,
+        "puesto": "Frontend"
+    },
+    {
+        "_id": {
+          "$oid": "67feecad9bd83d2f8f3f8100"
+        },
+        "nombre": "Ian",
+        "edad": 20,
+        "puesto": "Backend"
+    },
+    {
+        "_id": {
+          "$oid": "67feecad9bd83d2f8f3f8101"
+        },
+        "nombre": "Noelia",
+        "edad": 20,
+        "puesto": "Desarrollador"
+    },
+    {
+        "_id": {
+          "$oid": "67fef3e9085aef1ec7a9b65d"
+        },
+        "nombre": "Luciano",
+        "edad": 26,
+        "puesto": "Tester"
+    }
+]);
+
+db.Empleados.updateOne({edad: 26}, {$set: {edad: 27}});
+
+db.Empleados.deleteOne({puesto: "Pasante"});
