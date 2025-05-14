@@ -1,0 +1,20 @@
+// Ejercicio 3 
+
+use ('tiendaOnline');
+
+db.productos.aggregate([
+    { $project: {
+        nombre: 1,
+        precio: 1,
+        precioConImpuesto: { $multiply: ["$precio", 1.21] }
+    } }
+]);
+
+db.ventas.aggregate([
+    { $project: {
+        _id: 1,
+        nombreCliente: 1,
+        total: 1,
+        descuento: { $multiply: ["$total", 0.10] }
+    } }
+]);
