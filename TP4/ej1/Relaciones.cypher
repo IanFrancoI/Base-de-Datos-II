@@ -1,27 +1,26 @@
-// empleado con departamento 
-MATCH (e1:Empleado {id: 1}), (dTI:Departamento {codigo: 'TI'})
-CREATE (e1)-[:PERTENECE_A]->(dTI);
+MATCH (e1:Empleado {id: 1}), (dptoTI:Departamento {codigo: 'TI'})
+CREATE (e1)-[:PERTENECE_A]->(dptoTI);
 
-MATCH (e2:Empleado {id: 2}), (dTI:Departamento {codigo: 'TI'})
-CREATE (e2)-[:PERTENECE_A]->(dTI);
+MATCH (e2:Empleado {id: 2}), (dptoTI:Departamento {codigo: 'TI'})
+CREATE (e2)-[:PERTENECE_A]->(dptoTI);
 
-MATCH (e3:Empleado {id: 3}), (dRH:Departamento {codigo: 'RH'})
-CREATE (e3)-[:PERTENECE_A]->(dRH);
+MATCH (e3:Empleado {id: 3}), (dptoRH:Departamento {codigo: 'RH'})
+CREATE (e3)-[:PERTENECE_A]->(dptoRH);
 
-MATCH (e4:Empleado {id: 4}), (dTI:Departamento {codigo: 'TI'})
-CREATE (e4)-[:PERTENECE_A]->(dTI);
+MATCH (e4:Empleado {id: 4}), (dptoTI:Departamento {codigo: 'TI'})
+CREATE (e4)-[:PERTENECE_A]->(dptoTI);
 
-MATCH (e5:Empleado {id: 5}), (dVentas:Departamento {codigo: 'VEN'})
-CREATE (e5)-[:PERTENECE_A]->(dVentas);
+MATCH (e5:Empleado {id: 5}), (dptoVentas:Departamento {codigo: 'VEN'})
+CREATE (e5)-[:PERTENECE_A]->(dptoVentas);
 
-// empleado con proyecto
+
 MATCH (e2:Empleado {id: 2}), (p1:Proyecto {id: 1})
 CREATE (e2)-[:LIDERA]->(p1);
 
 MATCH (e1:Empleado {id: 1}), (p2:Proyecto {id: 2})
 CREATE (e1)-[:LIDERA]->(p2);
 
-// empleado con horas semanales 
+
 MATCH (e1:Empleado {id: 1}), (p1:Proyecto {id: 1})
 CREATE (e1)-[:ASIGNADO_A {horasSemanales: 25}]->(p1);
 

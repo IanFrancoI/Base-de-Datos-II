@@ -1,9 +1,8 @@
-// Departamentos
-CREATE (dTI:Departamento {nombre: 'Tecnología de la Información', codigo: 'TI'})
-CREATE (dRH:Departamento {nombre: 'Recursos Humanos', codigo: 'RH'})
-CREATE (dVentas:Departamento {nombre: 'Ventas', codigo: 'VEN'})
+CREATE (dptoTI:Departamento {nombre: 'Tecnología de la Informacion', codigo: 'TI'})
+CREATE (dptoRH:Departamento {nombre: 'Recursos Humanos', codigo: 'RH'})
+CREATE (dptoVentas:Departamento {nombre: 'Ventas', codigo: 'VEN'})
 
-// Empleados
+
 CREATE (e1:Empleado {
   id: 1,
   nombre: 'Ana García',
@@ -39,7 +38,7 @@ CREATE (e5:Empleado {
   puesto: 'Ejecutiva de Ventas'
 })
 
-// Proyectos
+
 CREATE (p1:Proyecto {
   id: 1,
   nombre: 'Sistema de Gestión Interna',
