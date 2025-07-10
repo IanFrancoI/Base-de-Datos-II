@@ -1,16 +1,16 @@
-MATCH (e1:Empleado {id: 1}), (dptoTI:Departamento {codigo: 'TI'})
+MATCH (e1:Empleado {id: 1}), (dptoTI:Departamento {codigo: "TI"})
 CREATE (e1)-[:PERTENECE_A]->(dptoTI);
 
-MATCH (e2:Empleado {id: 2}), (dptoTI:Departamento {codigo: 'TI'})
+MATCH (e2:Empleado {id: 2}), (dptoTI:Departamento {codigo: "TI"})
 CREATE (e2)-[:PERTENECE_A]->(dptoTI);
 
-MATCH (e3:Empleado {id: 3}), (dptoRH:Departamento {codigo: 'RH'})
+MATCH (e3:Empleado {id: 3}), (dptoRH:Departamento {codigo: "RH"})
 CREATE (e3)-[:PERTENECE_A]->(dptoRH);
 
-MATCH (e4:Empleado {id: 4}), (dptoTI:Departamento {codigo: 'TI'})
+MATCH (e4:Empleado {id: 4}), (dptoTI:Departamento {codigo: "TI"})
 CREATE (e4)-[:PERTENECE_A]->(dptoTI);
 
-MATCH (e5:Empleado {id: 5}), (dptoVentas:Departamento {codigo: 'VEN'})
+MATCH (e5:Empleado {id: 5}), (dptoVentas:Departamento {codigo: "VEN"})
 CREATE (e5)-[:PERTENECE_A]->(dptoVentas);
 
 
