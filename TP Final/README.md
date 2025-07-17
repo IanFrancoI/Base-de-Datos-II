@@ -18,11 +18,18 @@ Plataforma para gestionar habitaciones, huéspedes y reservas de un hotel.
 5) reporteOcupacion(mes, año) - Reporte de ocupación mensual
 
 ## Instalación
+
+### Paso 1
 1. Instala las dependencias: `npm install` o `npm i`
-2. Llena la base de datos con datos de prueba: `npm run seed:habitaciones` y `
+
+### Paso 2
+1. Configura la conexión a la base de datos en el archivo .env
+2. Levantar la base de datos con: `mongod` y `mongosh`
+3. Llenar la base de datos: `npm run seed:habitaciones` y `
 npm run seed:reservas`
-3. Inicia el servidor: `npm start` o `npm run dev`
-4. Accede a la aplicación en: `http://localhost:3000`
+4. Inicia el servidor: `npm start` o `npm run dev`
+5. Accede a la aplicación en: `http://localhost:3000`
+6. Probar rutas con Postman 
 
 ## Datos para .env
 - MONGO_URI=mongodb://localhost:27017/TPfinal
