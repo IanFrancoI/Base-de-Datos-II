@@ -86,10 +86,9 @@ async function seedHabitaciones() {
     ]
 
     const habitacionesInsertadas = await Habitacion.insertMany(habitaciones)
-    console.log("✅ Habitaciones insertadas exitosamente")
-    console.log(`📊 Total: ${habitacionesInsertadas.length} habitaciones`)
+    console.log("Habitaciones insertadas exitosamente")
+    console.log(`Total: ${habitacionesInsertadas.length} habitaciones`)
 
-    // Crear directorio seeds si no existe
     const fs = require("fs")
     const path = require("path")
     const seedsDir = path.join(__dirname, "../../seeds")
@@ -97,7 +96,6 @@ async function seedHabitaciones() {
       fs.mkdirSync(seedsDir, { recursive: true })
     }
 
-    // Guardar IDs en un archivo JSON para que reservas los usen
     fs.writeFileSync(
       path.join(seedsDir, "habitacionesIds.json"),
       JSON.stringify(
@@ -112,9 +110,9 @@ async function seedHabitaciones() {
     )
 
     await mongoose.disconnect()
-    console.log("🔌 Desconectado de MongoDB")
+    console.log("Desconectado de MongoDB")
   } catch (error) {
-    console.error("❌ Error en seed habitaciones:", error)
+    console.error("Error en seed habitaciones:", error)
     process.exit(1)
   }
 }

@@ -12,10 +12,9 @@ async function seedReservas() {
 
     await Reserva.deleteMany({})
 
-    // Leer IDs de habitaciones
     const habitacionesIdsPath = path.join(__dirname, "../../seeds/habitacionesIds.json")
     if (!fs.existsSync(habitacionesIdsPath)) {
-      console.error("❌ Archivo habitacionesIds.json no encontrado. Ejecuta primero el seed de habitaciones.")
+      console.error("Archivo habitacionesIds.json no encontrado. Ejecuta primero el seed de habitaciones.")
       process.exit(1)
     }
 
@@ -23,7 +22,7 @@ async function seedReservas() {
 
     const reservas = [
       {
-        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[0]._id), // Suite 101
+        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[0]._id),
         huesped: {
           nombre: "Luciano Guardese",
           email: "luciano@email.com",
@@ -37,7 +36,7 @@ async function seedReservas() {
         fechaReserva: new Date(),
       },
       {
-        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[3]._id), // Doble 201
+        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[3]._id),
         huesped: {
           nombre: "Noelia Hubert",
           email: "noelia@email.com",
@@ -51,7 +50,7 @@ async function seedReservas() {
         fechaReserva: new Date(),
       },
       {
-        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[1]._id), // Suite 102
+        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[1]._id),
         huesped: {
           nombre: "Ivan Guardese",
           email: "ivan@email.com",
@@ -65,7 +64,7 @@ async function seedReservas() {
         fechaReserva: new Date(),
       },
       {
-        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[6]._id), // Individual 301
+        habitacionId: new mongoose.Types.ObjectId(habitacionesIds[6]._id), 
         huesped: {
           nombre: "Ian Franco Ibanez",
           email: "ian@email.com",
@@ -81,13 +80,13 @@ async function seedReservas() {
     ]
 
     const reservasInsertadas = await Reserva.insertMany(reservas)
-    console.log("✅ Reservas insertadas exitosamente")
-    console.log(`📊 Total: ${reservasInsertadas.length} reservas`)
+    console.log("Reservas insertadas exitosamente")
+    console.log(`Total: ${reservasInsertadas.length} reservas`)
 
     await mongoose.disconnect()
-    console.log("🔌 Desconectado de MongoDB")
+    console.log("Desconectado de MongoDB")
   } catch (error) {
-    console.error("❌ Error en seed reservas:", error)
+    console.error("Error en seed reservas:", error)
     process.exit(1)
   }
 }

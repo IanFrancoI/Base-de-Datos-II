@@ -2,9 +2,9 @@ const express = require("express")
 const router = express.Router()
 const reservasController = require("../Controllers/reservasController")
 
-router.post("/", reservasController.crearReserva) // errores en la creacion de la reserva
+router.post("/", reservasController.crearReserva) 
 router.get("/", reservasController.getAllReservas)
-router.get("/reporte/ocupacion/:mes/:año", reservasController.reporteOcupacion
+router.get("/reporte/ocupacion/:mes/:anio", reservasController.reporteOcupacion)
 router.get("/:id", reservasController.getReservaPorId)
 router.get("/huesped/:email", reservasController.getReservasPorHuesped)
 router.get("/estado/:estado", reservasController.getReservasPorEstado)

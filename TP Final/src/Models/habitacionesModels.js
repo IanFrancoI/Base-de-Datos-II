@@ -18,7 +18,7 @@ const habitacionSchema = new mongoose.Schema({
     required: true
   },
   amenidades: {
-    type: [String], // Es un array de strings: ["WiFi", "TV", ...]
+    type: [String], //array de strings
     required: true
   },
   disponible: {

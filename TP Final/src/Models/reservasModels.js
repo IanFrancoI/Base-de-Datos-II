@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const reservaSchema = new mongoose.Schema({
   habitacionId: { 
-    type: mongoose.Schema.Types.ObjectId, // Referencia a una habitación
+    type: mongoose.Schema.Types.ObjectId, //referencia a una habitación
     ref: 'Habitacion',
     required: true
   },
