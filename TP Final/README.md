@@ -19,17 +19,14 @@ Plataforma para gestionar habitaciones, huéspedes y reservas de un hotel.
 
 ## Instalación
 
-### Paso 1
 1. Instala las dependencias: `npm install` o `npm i`
-
-### Paso 2
-1. Configura la conexión a la base de datos en el archivo .env
-2. Levantar la base de datos con: `mongod` y `mongosh`
-3. Llenar la base de datos: `npm run seed:habitaciones` y `
+2. Configura la conexión a la base de datos en el archivo `.env`
+3. Levantar la base de datos con: `mongod` y `mongosh` utilizando la terminal
+4. Llenar la base de datos: `npm run seed:habitaciones` y `
 npm run seed:reservas`
-4. Inicia el servidor: `npm start` o `npm run dev`
-5. Accede a la aplicación en: `http://localhost:3000`
-6. Probar rutas con Postman 
+5. Inicia el servidor: `npm start` o `npm run dev`
+6. Accede a la aplicación en: `http://localhost:3000`
+7. Probar rutas con Postman 
 
 ## Datos para .env
 - MONGO_URI=mongodb://localhost:27017/TPfinal
