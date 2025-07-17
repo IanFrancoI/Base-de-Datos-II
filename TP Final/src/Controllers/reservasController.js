@@ -149,10 +149,10 @@ const reservasController = {
     }
   },
   reporteOcupacion: async (req, res) => {
-    const { mes, año } = req.params 
+    const { mes, anio } = req.params 
     try {
-      const fechaInicio = new Date(año, mes - 1, 1) 
-      const fechaFin = new Date(año, mes, 0, 23, 59, 59, 999)
+      const fechaInicio = new Date(anio, mes - 1, 1) 
+      const fechaFin = new Date(anio, mes, 0, 23, 59, 59, 999)
       const reservas = await Reserva.find({
         estado: { $in: ["pendiente", "confirmada"] },
         $or: [{ fechaEntrada: { $lte: fechaFin }, fechaSalida: { $gte: fechaInicio } }],
@@ -170,14 +170,14 @@ const reservasController = {
 
       const totalHabitaciones = await Habitacion.countDocuments()
 
-      const diasMes = new Date(año, mes, 0).getDate()
+      const diasMes = new Date(anio, mes, 0).getDate()
       const nochesTotales = totalHabitaciones * diasMes
 
       const porcentajeOcupacion = ((nochesOcupadas / nochesTotales) * 100).toFixed(2)
 
       res.json({
         mes: Number.parseInt(mes),
-        año: Number.parseInt(año),
+        año: Number.parseInt(anio),
         totalHabitaciones,
         nochesTotales,
         nochesOcupadas,
